@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex" />
+    <title>Welcome to CodeSherlock — Let’s Ship Cleaner Code Together!</title>
+    <style>
+      /**
+  * # Root
+  * - CSS resets and general styles go here.
+**/
+
+      html,
+      body,
+      a,
+      span,
+      div[style*="margin: 16px 0"] {
+        border: 0 !important;
+        margin: 0 !important;
+        outline: 0 !important;
+        padding: 0 !important;
+        text-decoration: none !important;
+      }
+
+      a,
+      span,
+      td,
+      th {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+
+      /**
+  * # Delink
+  * - Classes for overriding clients which creates links out of things like
+  *   emails, addresses, phone numbers, etc.
+**/
+
+      span.st-Delink a {
+        color: #414552 !important;
+        text-decoration: none !important;
+      }
+
+      /** Modifier: preheader */
+      span.st-Delink.st-Delink--preheader a {
+        color: #fff !important;
+        text-decoration: none !important;
+      }
+      /** */
+
+      /** Modifier: title */
+      span.st-Delink.st-Delink--title a {
+        color: #414552 !important;
+        text-decoration: none !important;
+      }
+      /** */
+
+      /** Modifier: footer */
+      span.st-Delink.st-Delink--footer a {
+        color: #687385 !important;
+        text-decoration: none !important;
+      }
+      /** */
+
+      /**
+  * # Header
+**/
+
+      table.st-Header td.st-Header-background div.st-Header-area {
+        height: 76px !important;
+        width: 600px !important;
+        background-repeat: no-repeat !important;
+        background-size: 600px 76px !important;
+      }
+
+      table.st-Header td.st-Header-logo div.st-Header-area {
+        height: 29px !important;
+        width: 70px !important;
+        background-repeat: no-repeat !important;
+        background-size: 70px 29px !important;
+      }
+
+      table.st-Header
+        td.st-Header-logo.st-Header-logo--atlasAzlo
+        div.st-Header-area {
+        height: 21px !important;
+        width: 216px !important;
+        background-repeat: no-repeat !important;
+        background-size: 216px 21px !important;
+      }
+
+      /**
+  * # Retina
+  * - Targets high density displays and devices smaller than 768px.
+  *
+  * ! For mobile specific styling, see `# Mobile`.
+**/
+
+      @media (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi),
+        all and (max-width: 768px) {
+        /**
+    * # Target
+    * - Hides images in these devices to display the larger version as a
+    *   background image instead.
+  **/
+
+        /** Modifier: mobile */
+        div.st-Target.st-Target--mobile img {
+          display: none !important;
+          margin: 0 !important;
+          max-height: 0 !important;
+          min-height: 0 !important;
+          mso-hide: all !important;
+          padding: 0 !important;
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+        /** */
+
+        /**
+    * # Header
+  **/
+
+        /** Modifier: simplified */
+        table.st-Header.st-Header--simplified
+          td.st-Header-logo
+          div.st-Header-area {
+          background-image: url("https://csdevstoragefs.blob.core.windows.net/vsix-assets/codesherlock-email-logo.png") !important;
+        }
+        /** */
+      }
+
+      /**
+  * # Mobile
+  * - This affects emails views in clients less than 600px wide.
+**/
+
+      @media only screen and (max-width: 600px) {
+        /**
+    * # Wrapper
+  **/
+
+        table.st-Wrapper,
+        table.st-Width.st-Width--mobile {
+          min-width: 100% !important;
+          width: 100% !important;
+          border-radius: 0px !important;
+        }
+
+        /**
+    * # Spacer
+  **/
+
+        /** Modifier: gutter */
+        td.st-Spacer.st-Spacer--gutter {
+          width: 16px !important;
+        }
+        /** */
+
+        /** Modifier: td.kill */
+        td.st-Spacer.st-Spacer--kill {
+          width: 0 !important;
+        }
+        td.st-Spacer.st-Spacer--height {
+          height: 0 !important;
+        }
+        /** */
+
+        /** Modifier: div.kill */
+        div.st-Spacer.st-Spacer--kill {
+          height: 0px !important;
+        }
+        /** */
+
+        /** Modifier: footer */
+        .st-Mobile--footer {
+          text-align: center !important;
+        }
+        /** */
+
+        /**
+    * # Font
+  **/
+
+        /** Modifier: title */
+        td.st-Font.st-Font--title,
+        td.st-Font.st-Font--title span,
+        td.st-Font.st-Font--title a {
+          font-size: 20px !important;
+          line-height: 28px !important;
+          font-weight: 700 !important;
+        }
+        /** */
+
+        /** Modifier: header */
+        td.st-Font.st-Font--header,
+        td.st-Font.st-Font--header span,
+        td.st-Font.st-Font--header a {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+        /** */
+
+        /** Modifier: body */
+        td.st-Font.st-Font--body,
+        td.st-Font.st-Font--body span,
+        td.st-Font.st-Font--body a {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+        /** */
+
+        /** Modifier: caption */
+        td.st-Font.st-Font--caption,
+        td.st-Font.st-Font--caption span,
+        td.st-Font.st-Font--caption a {
+          font-size: 12px !important;
+          line-height: 16px !important;
+        }
+        /** */
+
+        /**
+    * # Header
+  **/
+        table.st-Header td.st-Header-background div.st-Header-area {
+          margin: 0 !important;
+          width: auto !important;
+          background-position: 0 0 !important;
+        }
+
+        /** Modifier: simplified */
+        table.st-Header.st-Header--simplified td.st-Header-logo {
+          width: auto !important;
+        }
+
+        table.st-Header.st-Header--simplified td.st-Header-spacing {
+          width: 0 !important;
+        }
+
+        table.st-Header.st-Header--simplified
+          td.st-Header-logo
+          div.st-Header-area {
+          margin: 0 !important;
+          background-image: url("https://csdevstoragefs.blob.core.windows.net/vsix-assets/codesherlock-email-logo.png") !important;
+        }
+
+        /**
+    * # Divider
+  **/
+
+        table.st-Divider td.st-Spacer.st-Spacer--gutter,
+        tr.st-Divider td.st-Spacer.st-Spacer--gutter {
+          background-color: #e6ebf1;
+        }
+
+        /**
+    * # Blocks
+  **/
+
+        table.st-Blocks table.st-Blocks-inner {
+          border-radius: 0 !important;
+        }
+
+        table.st-Blocks
+          table.st-Blocks-inner
+          table.st-Blocks-item
+          td.st-Blocks-item-cell {
+          display: block !important;
+        }
+
+        /**
+    * # Hero Units
+  **/
+
+        /* Hides dividers in hero units so that vertical spacing remains consistent */
+        table.st-Hero-Container td.st-Spacer--divider {
+          display: none !important;
+          margin: 0 !important;
+          max-height: 0 !important;
+          min-height: 0 !important;
+          mso-hide: all !important;
+          padding: 0 !important;
+
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+
+        table.st-Hero-Responsive {
+          margin: 16px auto !important;
+        }
+
+        /**
+    * # Button
+  **/
+
+        table.st-Button td.st-Button-area,
+        table.st-Button td.st-Button-area a.st-Button-link,
+        table.st-Button td.st-Button-area span.st-Button-internal {
+          height: 40px !important;
+          line-height: 24px !important;
+          font-size: 22px !important;
+        }
+      }
+
+      @media (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi),
+        all and (max-width: 768px) {
+        /**
+    * # mobile image
+   **/
+        div.st-Target.st-Target--mobile img {
+          display: none !important;
+          margin: 0 !important;
+          max-height: 0 !important;
+          min-height: 0 !important;
+          mso-hide: all !important;
+          padding: 0 !important;
+
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="st-Email"
+    bgcolor="#F8F6F1"
+    style="
+      border: 0;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      min-width: 100%;
+      width: 100%;
+    "
+    override="fix"
+  >
+    <!-- Background -->
+    <table
+      class="st-Background"
+      bgcolor="#F8F6F1"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="border: 0; margin: 0; padding: 0"
+    >
+      <tbody>
+        <tr>
+          <td class="st-Spacer st-Spacer--kill st-Spacer--height" height="64">
+            <div class="st-Spacer st-Spacer--kill">&nbsp;</div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border: 0; margin: 0; padding: 0">
+            <!-- Wrapper -->
+            <table
+              class="st-Wrapper"
+              align="center"
+              bgcolor="#FFF"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="600"
+              style="
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                margin: 0 auto;
+                min-width: 600px;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="border: 0; margin: 0; padding: 0">
+                    <table
+                      class="st-Header st-Header--simplified st-Width st-Width--mobile"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="600"
+                      style="
+                        min-width: 600px;
+                        background-color: #1f1f21;
+                        color: white;
+                        border-top-right-radius: 16px;
+                        border-top-left-radius: 16px;
+                      "
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--divider"
+                            colspan="4"
+                            height="30"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            class="st-Header-logo"
+                            align="left"
+                            height="50"
+                            width="200"
+                            style="border: 0; margin: 0; padding: 0"
+                          >
+                            <a
+                              style="
+                                border: 0;
+                                margin: 0;
+                                padding: 0;
+                                text-decoration: none;
+                              "
+                              href="https://codesherlock.ai"
+                            >
+                              <img
+                                alt="CodeSherlock"
+                                border="0"
+                                class="st-Header-source"
+                                height="50"
+                                width="200"
+                                style="
+                                  border: 0;
+                                  margin: 0;
+                                  padding: 0;
+                                  color: #6772e5;
+                                  display: block;
+                                  font-family: -apple-system, BlinkMacSystemFont,
+                                    'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu,
+                                    sans-serif;
+                                  font-size: 12px;
+                                  font-weight: normal;
+                                "
+                                src="https://csdevstoragefs.blob.core.windows.net/vsix-assets/codesherlock-email-logo.png"
+                              />
+                            </a>
+                          </td>
+                          <td
+                            class="st-Header-spacing"
+                            width="423"
+                            style="border: 0; margin: 0; padding: 0"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--divider"
+                            colspan="4"
+                            height="32"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table
+                      class="st-Copy st-Width st-Width--mobile"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="600"
+                      style="min-width: 600px"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="8"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              color: #414552 !important;
+                              font-family: -apple-system, 'SF Pro Display',
+                                'SF Pro Text', 'Helvetica', sans-serif;
+                              font-weight: 400;
+                              font-size: 16px;
+                              line-height: 24px;
+                            "
+                          >
+                            <div style="margin-top: 20px">
+                              Hi {{username}}{% if organization_name and organization_name != "No Organization" %} ({{organization_name}}){% endif %},
+                              <p>
+                                You're down to {{days_left}} days of your {{trial_period}} trial period. After today new analysis in-editor and PR analyses will pause.
+                              </p>
+                              <p>
+                                We would love for you to upgrade to a paid plan to continue to avail our analysis.
+                              </p>
+                            </div>
+
+                            <div style="margin-top: 20px">
+                              <p style="font-weight: 800; font-size: 16px">
+                                Unlock more power with the Standard Plan
+                              </p>
+                            </div>
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              color: #414552 !important;
+                              font-family: -apple-system, 'SF Pro Display',
+                                'SF Pro Text', 'Helvetica', sans-serif;
+                              font-weight: 400;
+                              font-size: 16px;
+                              line-height: 24px;
+                            "
+                          >
+                            <ul style="padding-left: 1.2rem">
+                              <li>
+                                <strong>Around 300-500 analyses per user per month.</strong>
+                                <br />
+                              </li>
+                            </ul>
+
+                            <div style="margin: 0 0 0 0">
+                              <p>
+                                Upgrade your plan in the <a href="{{ dashboard_url }}" target="_blank" style="text-decoration: underline;">dashboard</a> under <strong>Manage Plan</strong>.
+                              </p>
+                              <p>
+                                Have questions? Contact us at <a href="mailto:support@codesherlock.ai" style="color: blue !important; text-decoration: underline;">support@codesherlock.ai</a> — we're happy to help.
+                              </p>
+                            </div>
+
+                            <div style="margin: 20px 0 0 0">
+                              <b>Your Feedback Matters: </b>Please take a moment
+                              to share your thoughts on your experience. Your
+                              feedback helps us improve CodeSherlock.
+                              <ul>
+                                <li>
+                                  Use this link:
+                                  <a
+                                    href="https://codesherlock.ai/contact"
+                                    target="_blank"
+                                    >Feedback form link</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <div>
+                              We're excited to see what you'll analyze next!
+                              <p>Keep shipping great code,</p>
+                              <p>CodeSherlock team</p>
+                              <p>We are SOC2 type 1 and ISO 27001 certified</p>
+                            </div>
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="8"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table
+                      class="st-Copy st-Width st-Width--mobile"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="600"
+                      style="min-width: 600px"
+                    >
+                      <tbody>
+                        <tr>
+                          <!-- <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="24"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td> -->
+                        </tr>
+                        <tr>
+                          <!-- <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td> -->
+                          <td
+                            class="st-Font st-Font--body"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              color: #414552;
+                              font-family: -apple-system, 'SF Pro Display',
+                                'SF Pro Text', 'Helvetica', sans-serif;
+                              font-size: 16px;
+                              line-height: 30px;
+                            "
+                          >
+                            <!-- Button & Modifier: fullWidth -->
+                            <table
+                              class="st-Button st-Button--fullWidth"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              <!-- <tbody>
+                                <tr>
+                                  <td
+                                    align="center"
+                                    class="st-Button-area"
+                                    height="36"
+                                    style="
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      text-align: center;
+                                      font-family: -apple-system,
+                                        'SF Pro Display', 'SF Pro Text',
+                                        'Helvetica', sans-serif;
+                                      font-size: 28px;
+                                      color: #1f1f21;
+                                    "
+                                  >
+                                    <strong></strong>
+                                  </td>
+                                </tr>
+                              </tbody> -->
+                            </table>
+                            <!-- /Button & Modifier: fullWidth -->
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="24"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table
+                      class="st-Copy st-Width st-Width--mobile"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="600"
+                      style="min-width: 600px"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="8"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              color: #414552 !important;
+                              font-family: -apple-system, 'SF Pro Display',
+                                'SF Pro Text', 'Helvetica', sans-serif;
+                              font-weight: 400;
+                              font-size: 16px;
+                              line-height: 24px;
+                            "
+                          ></td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--stacked"
+                            colspan="3"
+                            height="8"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div style="background-color: #f8f6f1">
+                      <table
+                        class="st-Footer st-Width st-Width--mobile st-Layout-Wrapper"
+                        border="0"
+                        cellpadding="0"
+                        cellspacing="0"
+                        width="600"
+                        style="
+                          min-width: 600px;
+                          border-bottom-right-radius: 16px;
+                          border-bottom-left-radius: 16px;
+                          background-color: #ffffff;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              class="st-Spacer st-Spacer--wrapper"
+                              height="60"
+                              style="
+                                text-align: center;
+                                color: #ffffff;
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu,
+                                  sans-serif;
+                                font-size: 14px;
+                              "
+                            >
+                              <div class="st-Spacer">
+                                <!-- © 2024 CodeSherlock. All rights reserved. -->
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <table
+                      class="st-Footer st-Width st-Width--mobile"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="600"
+                      style="min-width: 600px"
+                      bgcolor="#F8F6F1"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="st-Spacer st-Spacer--wrapper" height="32">
+                            <div class="st-Spacer"></div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            class="st-Font st-Font--caption st-Mobile--footer"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              color: #687385;
+                              font-family: -apple-system, BlinkMacSystemFont,
+                                'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu,
+                                sans-serif;
+                              font-size: 12px;
+                              line-height: 20px;
+                              text-align: center;
+                            "
+                          >
+                            <span
+                              class="st-Delink st-Delink--footer"
+                              style="
+                                border: 0;
+                                margin: 0;
+                                padding: 0;
+                                color: #687385;
+                                text-decoration: none;
+                              "
+                            >
+                              CodeSherlock, 101 Crawfords Corner Rd, <br />
+                              Suite 4116 Holmdel, NJ 07733, USA
+                              <br />
+                              <div
+                                style="
+                                  color: blue !important;
+                                  text-decoration: underline;
+                                  margin: 5px;
+                                "
+                              >
+                                <a
+                                  style="
+                                    color: blue !important;
+                                    text-decoration: underline;
+                                  "
+                                  href="mailto:support@codesherlock.ai"
+                                  >support@codesherlock.ai</a
+                                >
+                              </div>
+
+                              <p>© 2024 CodeSherlock. All rights reserved.</p>
+                            </span>
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="st-Spacer st-Spacer--wrapper" height="10">
+                            <div class="st-Spacer"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                          <td
+                            class="st-Spacer st-Spacer--gutter"
+                            style="
+                              border: 0;
+                              margin: 0;
+                              padding: 0;
+                              font-size: 1px;
+                              line-height: 1px;
+                              mso-line-height-rule: exactly;
+                            "
+                            width="48"
+                          >
+                            <div class="st-Spacer st-Spacer--filler"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="st-Spacer st-Spacer--wrapper" height="15">
+                            <div class="st-Spacer"></div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="st-Spacer st-Spacer--wrapper" height="32">
+                            <div class="st-Spacer st-Spacer--kill"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- /Wrapper -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- /Background -->
+  </body>
+</html>
